@@ -1,0 +1,299 @@
+[gd_scene format=3 uid="uid://u3nofs0yfy4v"]
+
+[ext_resource type="Texture2D" uid="uid://dy876isbbchm5" path="res://assets/mobs/slime/slime_ssheet.png" id="1_textura"]
+[ext_resource type="Script" uid="uid://b1uetgritoam2" path="res://scripts/mobs/Slime.cs" id="2_script"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_slime"]
+radius = 9.0
+height = 48.0
+
+[sub_resource type="Animation" id="Animation_andar_baixo"]
+resource_name = "andar_baixo"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 280, 185), Rect2(280, 0, 240, 185), Rect2(520, 0, 250, 185), Rect2(770, 0, 265, 185), Rect2(1035, 0, 245, 185), Rect2(1280, 0, 276, 185)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-164, -165), Vector2(-130, -165), Vector2(-134, -165), Vector2(-129, -165), Vector2(-109, -165), Vector2(-116, -165)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_cima"]
+resource_name = "andar_cima"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 490, 280, 142), Rect2(280, 490, 240, 142), Rect2(520, 490, 250, 142), Rect2(770, 490, 265, 142), Rect2(1035, 490, 245, 142), Rect2(1280, 490, 276, 142)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-164, -134), Vector2(-130, -134), Vector2(-134, -134), Vector2(-129, -134), Vector2(-109, -134), Vector2(-116, -134)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_direita"]
+resource_name = "andar_direita"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 340, 280, 150), Rect2(280, 340, 240, 150), Rect2(520, 340, 250, 150), Rect2(770, 340, 265, 150), Rect2(1035, 340, 245, 150), Rect2(1280, 340, 276, 150)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-164, -134), Vector2(-130, -134), Vector2(-134, -134), Vector2(-129, -134), Vector2(-109, -134), Vector2(-116, -134)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_esquerda"]
+resource_name = "andar_esquerda"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 185, 280, 155), Rect2(280, 185, 240, 155), Rect2(520, 185, 250, 155), Rect2(770, 185, 265, 155), Rect2(1035, 185, 245, 155), Rect2(1280, 185, 276, 155)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-164, -133), Vector2(-130, -133), Vector2(-134, -133), Vector2(-129, -133), Vector2(-109, -133), Vector2(-116, -133)]
+}
+
+[sub_resource type="Animation" id="Animation_atacar_baixo"]
+resource_name = "atacar_baixo"
+length = 0.72
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 632, 280, 142), Rect2(280, 632, 240, 142), Rect2(520, 632, 250, 142), Rect2(770, 632, 265, 142), Rect2(1035, 632, 245, 142), Rect2(1280, 632, 276, 142)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-164, -135), Vector2(-130, -135), Vector2(-134, -135), Vector2(-129, -135), Vector2(-109, -135), Vector2(-116, -135)]
+}
+
+[sub_resource type="Animation" id="Animation_atacar_direita"]
+resource_name = "atacar_direita"
+length = 0.72
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 896, 280, 148), Rect2(280, 896, 240, 148), Rect2(520, 896, 250, 148), Rect2(770, 896, 265, 148), Rect2(1035, 896, 245, 148), Rect2(1280, 896, 276, 148)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-164, -119), Vector2(-130, -119), Vector2(-134, -119), Vector2(-129, -119), Vector2(-109, -119), Vector2(-116, -119)]
+}
+
+[sub_resource type="Animation" id="Animation_atacar_esquerda"]
+resource_name = "atacar_esquerda"
+length = 0.72
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 774, 280, 122), Rect2(280, 774, 240, 122), Rect2(520, 774, 250, 122), Rect2(770, 774, 265, 122), Rect2(1035, 774, 245, 122), Rect2(1280, 774, 276, 122)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-164, -117), Vector2(-130, -117), Vector2(-134, -117), Vector2(-129, -117), Vector2(-109, -117), Vector2(-116, -117)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_slime"]
+_data = {
+&"andar_baixo": SubResource("Animation_andar_baixo"),
+&"andar_cima": SubResource("Animation_andar_cima"),
+&"andar_direita": SubResource("Animation_andar_direita"),
+&"andar_esquerda": SubResource("Animation_andar_esquerda"),
+&"atacar_baixo": SubResource("Animation_atacar_baixo"),
+&"atacar_direita": SubResource("Animation_atacar_direita"),
+&"atacar_esquerda": SubResource("Animation_atacar_esquerda")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_andar_baixo"]
+animation = &"andar_baixo"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_andar_cima"]
+animation = &"andar_cima"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_andar_direita"]
+animation = &"andar_direita"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_andar_esquerda"]
+animation = &"andar_esquerda"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_atacar_baixo"]
+animation = &"atacar_baixo"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_atacar_cima"]
+animation = &"atacar_baixo"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_atacar_direita"]
+animation = &"atacar_direita"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_atacar_esquerda"]
+animation = &"atacar_esquerda"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="Transition_inicio"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="Transition_fim_do_ataque"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="StateMachine_slime"]
+states/End/position = Vector2(650, 100)
+states/Start/position = Vector2(70, 100)
+states/andar_baixo/node = SubResource("AnimationNode_andar_baixo")
+states/andar_baixo/position = Vector2(260, 100)
+states/andar_cima/node = SubResource("AnimationNode_andar_cima")
+states/andar_cima/position = Vector2(260, 325)
+states/andar_direita/node = SubResource("AnimationNode_andar_direita")
+states/andar_direita/position = Vector2(260, 250)
+states/andar_esquerda/node = SubResource("AnimationNode_andar_esquerda")
+states/andar_esquerda/position = Vector2(260, 175)
+states/atacar_baixo/node = SubResource("AnimationNode_atacar_baixo")
+states/atacar_baixo/position = Vector2(460, 100)
+states/atacar_cima/node = SubResource("AnimationNode_atacar_cima")
+states/atacar_cima/position = Vector2(460, 325)
+states/atacar_direita/node = SubResource("AnimationNode_atacar_direita")
+states/atacar_direita/position = Vector2(460, 250)
+states/atacar_esquerda/node = SubResource("AnimationNode_atacar_esquerda")
+states/atacar_esquerda/position = Vector2(460, 175)
+transitions = ["Start", "andar_baixo", SubResource("Transition_inicio"), "atacar_baixo", "andar_baixo", SubResource("Transition_fim_do_ataque"), "atacar_esquerda", "andar_esquerda", SubResource("Transition_fim_do_ataque"), "atacar_direita", "andar_direita", SubResource("Transition_fim_do_ataque"), "atacar_cima", "andar_cima", SubResource("Transition_fim_do_ataque")]
+
+[node name="Slime" type="CharacterBody2D" unique_id=442048855]
+motion_mode = 1
+script = ExtResource("2_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=551146051]
+texture_filter = 1
+position = Vector2(-0.9999995, 3)
+scale = Vector2(0.30270267, 0.30270267)
+texture = ExtResource("1_textura")
+centered = false
+offset = Vector2(-164, -165)
+region_enabled = true
+region_rect = Rect2(0, 0, 280, 185)
+region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=597088431]
+position = Vector2(0, -6)
+rotation = 1.5707963
+shape = SubResource("CapsuleShape2D_slime")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1030157347]
+libraries/ = SubResource("AnimationLibrary_slime")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=951455365]
+active = false
+tree_root = SubResource("StateMachine_slime")
+anim_player = NodePath("../AnimationPlayer")

@@ -1,0 +1,295 @@
+[gd_scene format=3 uid="uid://h6y1ry5ld3lk"]
+
+[ext_resource type="Texture2D" uid="uid://k8ds2jy6y18c" path="res://assets/mobs/morcego/morcego.png" id="1_hmy45"]
+[ext_resource type="Script" uid="uid://dxj5ck87v8kr3" path="res://scripts/mobs/Morcego.cs" id="2_morcego"]
+[ext_resource type="Texture2D" uid="uid://b4lh1hkawccuq" path="res://assets/mobs/morcego/habilidades/broca_de_sangue.png" id="3_broca"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_hmy45")]
+}
+
+[sub_resource type="Animation" id="Animation_andando"]
+resource_name = "andando"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_hmy45")]
+}
+
+[sub_resource type="Animation" id="Animation_andando_baixo"]
+resource_name = "andando_baixo"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_hmy45")]
+}
+
+[sub_resource type="Animation" id="Animation_andando_cima"]
+resource_name = "andando_cima"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_hmy45")]
+}
+
+[sub_resource type="Animation" id="Animation_broca_de_sangue"]
+resource_name = "broca_de_sangue"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_broca")]
+}
+
+[sub_resource type="Animation" id="Animation_broca_de_sangue_cima"]
+resource_name = "broca_de_sangue_cima"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_broca")]
+}
+
+[sub_resource type="Animation" id="Animation_broca_de_sangue_diagonal"]
+resource_name = "broca_de_sangue_diagonal"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [18, 19, 20, 21, 22, 23]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_broca")]
+}
+
+[sub_resource type="Animation" id="Animation_broca_de_sangue_lado"]
+resource_name = "broca_de_sangue_lado"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_broca")]
+}
+
+[sub_resource type="Animation" id="Animation_parado"]
+resource_name = "parado"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_hmy45")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a15wt"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"andando": SubResource("Animation_andando"),
+&"andando_baixo": SubResource("Animation_andando_baixo"),
+&"andando_cima": SubResource("Animation_andando_cima"),
+&"broca_de_sangue": SubResource("Animation_broca_de_sangue"),
+&"broca_de_sangue_cima": SubResource("Animation_broca_de_sangue_cima"),
+&"broca_de_sangue_diagonal": SubResource("Animation_broca_de_sangue_diagonal"),
+&"broca_de_sangue_lado": SubResource("Animation_broca_de_sangue_lado"),
+&"parado": SubResource("Animation_parado")
+}
+
+[node name="Node2D" type="Node2D" unique_id=763548244]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1408046454]
+motion_mode = 1
+script = ExtResource("2_morcego")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=592333071]
+position = Vector2(1.4210855e-14, -1.4210855e-14)
+scale = Vector2(0.2871094, 0.2871094)
+texture = ExtResource("1_hmy45")
+hframes = 6
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/Sprite2D" unique_id=2101354617]
+libraries/ = SubResource("AnimationLibrary_a15wt")
+autoplay = &"parado"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=1487425662]
+position = Vector2(3, 7.0000005)
+scale = Vector2(0.28710943, 0.28710943)
+polygon = PackedVector2Array(-24.380947, 10.4489765, -3.4829926, 34.829926, 3.4829922, 34.829926, 20.897953, 13.931967, 24.380947, 6.9659824, 34.82992, -3.482994, 55.72788, -3.482994, 62.69386, -17.414965, 69.65985, -24.380949, 73.142845, -20.897957, 80.108826, -20.897957, 83.59182, -38.31292, 59.210873, -66.17686, 48.761894, -69.65985, 24.380947, -69.65985, 6.9659853, -48.761894, 3.4829922, -45.278904, 3.4829922, -38.31292, -3.4829926, -38.31292, -10.448977, -52.24489, -17.414963, -66.17686, -24.380947, -69.65985, -52.24489, -69.65985, -73.14284, -52.24489, -83.59181, -34.829926, -83.59181, -20.897957, -80.108826, -17.414965, -69.65985, -24.380949, -62.693863, -17.414965, -59.210873, -6.9659863, -55.72788, -3.482994, -41.79591, -3.482994)

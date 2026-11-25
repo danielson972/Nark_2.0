@@ -1,0 +1,835 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/utilitarios/Inventario.cs" id="1_inventario"]
+
+[sub_resource type="SystemFont" id="Fonte"]
+font_names = PackedStringArray("Georgia", "DejaVu Serif")
+font_weight = 700
+
+[sub_resource type="StyleBoxFlat" id="Moldura"]
+bg_color = Color(0.18, 0.10, 0.08, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87, 0.54, 0.23, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="Madeira"]
+bg_color = Color(0.32, 0.18, 0.13, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.69, 0.42, 0.24, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="Papel"]
+bg_color = Color(0.96, 0.80, 0.62, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.69, 0.38, 0.20, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="Atributos"]
+bg_color = Color(0.90, 0.68, 0.47, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.62, 0.34, 0.20, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="Slot"]
+bg_color = Color(0.21, 0.12, 0.08, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.97, 0.74, 0.39, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="Selecionado"]
+bg_color = Color(0.99, 0.66, 0.23, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.99, 0.85, 0.56, 1)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Tema"]
+default_font = SubResource("Fonte")
+default_font_size = 18
+Label/colors/font_color = Color(1, 0.92, 0.75, 1)
+Button/colors/font_color = Color(1, 0.92, 0.75, 1)
+Button/colors/font_hover_color = Color(1, 0.98, 0.89, 1)
+Button/colors/font_pressed_color = Color(0.19, 0.1, 0.05, 1)
+Button/colors/font_hover_pressed_color = Color(0.19, 0.1, 0.05, 1)
+Button/styles/normal = SubResource("Madeira")
+Button/styles/hover = SubResource("Moldura")
+Button/styles/pressed = SubResource("Selecionado")
+Button/styles/hover_pressed = SubResource("Selecionado")
+
+[sub_resource type="ButtonGroup" id="Grupo_Abas"]
+
+[node name="Inventario" type="CanvasLayer"]
+layer = 11
+script = ExtResource("1_inventario")
+
+[node name="Janela" type="Control" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="Janela"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.08, 0.05, 0.03, 0.62)
+
+[node name="Painel" type="Panel" parent="Janela"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 960.0
+offset_bottom = 704.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Moldura")
+theme = SubResource("Tema")
+
+[node name="FaixaTitulo" type="Panel" parent="Janela/Painel"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 12.0
+offset_right = 650.0
+offset_bottom = 68.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Madeira")
+
+[node name="Titulo" type="Label" parent="Janela/Painel/FaixaTitulo"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 340.0
+offset_bottom = 56.0
+text = "Inventário"
+vertical_alignment = 1
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 36
+
+[node name="Fechar" type="Button" parent="Janela/Painel"]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 17.0
+offset_right = 943.0
+offset_bottom = 55.0
+unique_name_in_owner = true
+text = "×"
+tooltip_text = "Fechar inventário (I ou Esc)"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 28
+
+[node name="Equipamento" type="Panel" parent="Janela/Painel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 78.0
+offset_right = 422.0
+offset_bottom = 684.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Papel")
+
+[node name="Esquerda1" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 20.0
+offset_right = 86.0
+offset_bottom = 84.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="EspadaVelha" type="Label" parent="Janela/Painel/Equipamento/Esquerda1"]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_font_sizes/font_size = 12
+text = "Espada\nvelha"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Esquerda2" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 90.0
+offset_right = 86.0
+offset_bottom = 154.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Esquerda3" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 160.0
+offset_right = 86.0
+offset_bottom = 224.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Esquerda4" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 230.0
+offset_right = 86.0
+offset_bottom = 294.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Esquerda5" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 300.0
+offset_right = 86.0
+offset_bottom = 364.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Direita1" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 20.0
+offset_right = 380.0
+offset_bottom = 84.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="EscudoVelho" type="Label" parent="Janela/Painel/Equipamento/Direita1"]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_font_sizes/font_size = 12
+text = "Escudo\nvelho"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Direita2" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 90.0
+offset_right = 380.0
+offset_bottom = 154.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Direita3" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 160.0
+offset_right = 380.0
+offset_bottom = 224.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Direita4" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 230.0
+offset_right = 380.0
+offset_bottom = 294.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Central" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 300.0
+offset_right = 233.0
+offset_bottom = 364.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="FaixaAtributos" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 384.0
+offset_right = 288.0
+offset_bottom = 421.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Madeira")
+
+[node name="Titulo" type="Label" parent="Janela/Painel/Equipamento/FaixaAtributos"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 174.0
+offset_bottom = 37.0
+text = "Atributos"
+vertical_alignment = 1
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 22
+
+[node name="Atributos" type="Panel" parent="Janela/Painel/Equipamento"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 431.0
+offset_right = 386.0
+offset_bottom = 587.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Atributos")
+
+[node name="Nome1" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 154.0
+offset_bottom = 41.0
+text = "Vida"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+
+[node name="Valor1" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 12.0
+offset_right = 177.0
+offset_bottom = 41.0
+text = "–"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+horizontal_alignment = 1
+
+[node name="Nome2" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 44.0
+offset_right = 154.0
+offset_bottom = 73.0
+text = "Energia"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+
+[node name="Valor2" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 44.0
+offset_right = 177.0
+offset_bottom = 73.0
+text = "–"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+horizontal_alignment = 1
+
+[node name="Nome3" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 76.0
+offset_right = 154.0
+offset_bottom = 105.0
+text = "Ataque"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+
+[node name="Valor3" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 155.0
+offset_top = 76.0
+offset_right = 177.0
+offset_bottom = 105.0
+text = "–"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+horizontal_alignment = 1
+
+[node name="Nome4" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 108.0
+offset_right = 154.0
+offset_bottom = 137.0
+text = "Defesa"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+
+[node name="Valor4" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 155.0
+offset_top = 108.0
+offset_right = 177.0
+offset_bottom = 137.0
+text = "–"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+horizontal_alignment = 1
+
+[node name="Nome5" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 12.0
+offset_right = 338.0
+offset_bottom = 41.0
+text = "Força"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+
+[node name="Valor5" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 12.0
+offset_right = 361.0
+offset_bottom = 41.0
+text = "–"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+horizontal_alignment = 1
+
+[node name="Nome6" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 44.0
+offset_right = 338.0
+offset_bottom = 73.0
+text = "Agilidade"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+
+[node name="Valor6" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 44.0
+offset_right = 361.0
+offset_bottom = 73.0
+text = "–"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+horizontal_alignment = 1
+
+[node name="Nome7" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 76.0
+offset_right = 338.0
+offset_bottom = 105.0
+text = "Inteligência"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+
+[node name="Valor7" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 76.0
+offset_right = 361.0
+offset_bottom = 105.0
+text = "–"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+horizontal_alignment = 1
+
+[node name="Nome8" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 108.0
+offset_right = 338.0
+offset_bottom = 137.0
+text = "Sorte"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+
+[node name="Valor8" type="Label" parent="Janela/Painel/Equipamento/Atributos"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 108.0
+offset_right = 361.0
+offset_bottom = 137.0
+text = "–"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.26, 0.13, 0.08, 1)
+horizontal_alignment = 1
+
+[node name="Abas" type="HBoxContainer" parent="Janela/Painel"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 78.0
+offset_right = 940.0
+offset_bottom = 122.0
+unique_name_in_owner = true
+theme_override_constants/separation = 5
+
+[node name="Todos" type="Button" parent="Janela/Painel/Abas"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("Grupo_Abas")
+text = "Todos"
+
+[node name="Arsenal" type="Button" parent="Janela/Painel/Abas"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("Grupo_Abas")
+text = "Arsenal"
+
+[node name="Materiais" type="Button" parent="Janela/Painel/Abas"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("Grupo_Abas")
+text = "Materiais"
+
+[node name="Missoes" type="Button" parent="Janela/Painel/Abas"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("Grupo_Abas")
+text = "Missões"
+
+[node name="Mochila" type="Panel" parent="Janela/Painel"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 132.0
+offset_right = 940.0
+offset_bottom = 614.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Papel")
+
+[node name="Slots" type="GridContainer" parent="Janela/Painel/Mochila"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 486.0
+offset_bottom = 466.0
+columns = 7
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 8
+
+[node name="Slot01" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot02" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot03" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot04" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot05" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot06" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot07" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot08" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot09" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot10" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot11" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot12" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot13" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot14" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot15" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot16" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot17" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot18" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot19" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot20" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot21" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot22" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot23" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot24" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot25" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot26" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot27" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot28" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot29" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot30" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot31" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot32" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot33" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot34" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot35" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot36" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot37" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot38" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot39" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot40" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot41" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Slot42" type="Panel" parent="Janela/Painel/Mochila/Slots"]
+custom_minimum_size = Vector2(61, 68)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Slot")
+
+[node name="Moedas" type="Panel" parent="Janela/Painel"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 626.0
+offset_right = 807.0
+offset_bottom = 684.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Madeira")
+
+[node name="Ouro" type="Label" parent="Janela/Painel/Moedas"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 0.0
+offset_right = 81.0
+offset_bottom = 58.0
+text = "Ouro"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(1, 0.78, 0.29, 1)
+
+[node name="ValorOuro" type="Label" parent="Janela/Painel/Moedas"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 0.0
+offset_right = 169.0
+offset_bottom = 58.0
+text = "0"
+vertical_alignment = 1
+unique_name_in_owner = true
+horizontal_alignment = 2
+
+[node name="Prata" type="Label" parent="Janela/Painel/Moedas"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 0.0
+offset_right = 261.0
+offset_bottom = 58.0
+text = "Prata"
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.85, 0.88, 0.93, 1)
+
+[node name="ValorPrata" type="Label" parent="Janela/Painel/Moedas"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 0.0
+offset_right = 353.0
+offset_bottom = 58.0
+text = "0"
+vertical_alignment = 1
+unique_name_in_owner = true
+horizontal_alignment = 2
+
+[node name="Excluir" type="Button" parent="Janela/Painel"]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 626.0
+offset_right = 940.0
+offset_bottom = 684.0
+disabled = true
+focus_mode = 0
+text = "Excluir"

@@ -1,0 +1,413 @@
+[gd_scene format=3 uid="uid://br71idrc6xldx"]
+
+[ext_resource type="Texture2D" uid="uid://cp2ckotoebjdr" path="res://assets/mobs/Miniboss/floresta_leste/Vinar.png" id="1_textura"]
+[ext_resource type="Script" path="res://scripts/mobs/Vinar.cs" id="2_vinar"]
+[ext_resource type="Texture2D" path="res://assets/mobs/Miniboss/floresta_leste/Vinar_idle.png" id="3_idle"]
+[ext_resource type="Texture2D" path="res://assets/mobs/Miniboss/floresta_leste/Death_enfraquecimento_queda_e_ morte.png" id="4_death"]
+[ext_resource type="Texture2D" path="res://assets/mobs/Miniboss/floresta_leste/Wing Attack_Ultimate.png" id="5_ultimate"]
+[ext_resource type="PackedScene" path="res://scenes/mobs/vinar/DarkMagic.tscn" id="6_efeito_magia"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle_1"]
+atlas = ExtResource("3_idle")
+region = Rect2(30, 8, 182, 152)
+margin = Rect2(37, 38, 74, 68)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle_2"]
+atlas = ExtResource("3_idle")
+region = Rect2(258, 8, 182, 152)
+margin = Rect2(35, 39, 74, 68)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle_3"]
+atlas = ExtResource("3_idle")
+region = Rect2(477, 8, 179, 152)
+margin = Rect2(38, 40, 77, 68)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle_4"]
+atlas = ExtResource("3_idle")
+region = Rect2(693, 8, 184, 152)
+margin = Rect2(37, 39, 72, 68)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1"]
+atlas = ExtResource("1_textura")
+region = Rect2(0, 580, 136, 149)
+margin = Rect2(38, 39, 120, 71)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2"]
+atlas = ExtResource("1_textura")
+region = Rect2(136, 580, 169, 149)
+margin = Rect2(19, 39, 87, 71)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3"]
+atlas = ExtResource("1_textura")
+region = Rect2(305, 580, 156, 149)
+margin = Rect2(35, 39, 100, 71)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4"]
+atlas = ExtResource("1_textura")
+region = Rect2(461, 580, 152, 149)
+margin = Rect2(43, 39, 104, 71)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5"]
+atlas = ExtResource("1_textura")
+region = Rect2(613, 580, 154, 149)
+margin = Rect2(39, 39, 102, 71)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6"]
+atlas = ExtResource("1_textura")
+region = Rect2(767, 580, 161, 149)
+margin = Rect2(35, 39, 95, 71)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7"]
+atlas = ExtResource("1_textura")
+region = Rect2(0, 747, 173, 171)
+margin = Rect2(27, 15, 83, 49)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8"]
+atlas = ExtResource("1_textura")
+region = Rect2(173, 747, 147, 171)
+margin = Rect2(44, 15, 109, 49)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_9"]
+atlas = ExtResource("1_textura")
+region = Rect2(320, 747, 157, 171)
+margin = Rect2(36, 15, 99, 49)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10"]
+atlas = ExtResource("1_textura")
+region = Rect2(477, 747, 147, 171)
+margin = Rect2(50, 15, 109, 49)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11"]
+atlas = ExtResource("1_textura")
+region = Rect2(624, 747, 163, 171)
+margin = Rect2(44, 15, 93, 49)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12"]
+atlas = ExtResource("1_textura")
+region = Rect2(787, 747, 170, 171)
+margin = Rect2(48, 15, 86, 49)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13"]
+atlas = ExtResource("1_textura")
+region = Rect2(957, 747, 139, 171)
+margin = Rect2(61, 15, 117, 49)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14"]
+atlas = ExtResource("1_textura")
+region = Rect2(1096, 747, 147, 171)
+margin = Rect2(53, 15, 109, 49)
+filter_clip = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_barra_fundo"]
+bg_color = Color(0.12, 0.07, 0.09, 0.95)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_barra_vida"]
+bg_color = Color(0.65, 0.12, 0.19, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_death_1"]
+atlas = ExtResource("4_death")
+region = Rect2(0, 0, 149, 128)
+margin = Rect2(42, 56, 107, 92)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_death_2"]
+atlas = ExtResource("4_death")
+region = Rect2(149, 0, 165, 128)
+margin = Rect2(41, 56, 91, 92)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_death_3"]
+atlas = ExtResource("4_death")
+region = Rect2(314, 0, 160, 128)
+margin = Rect2(55, 56, 96, 92)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_death_4"]
+atlas = ExtResource("4_death")
+region = Rect2(474, 0, 194, 128)
+margin = Rect2(58, 56, 62, 92)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_death_5"]
+atlas = ExtResource("4_death")
+region = Rect2(668, 0, 196, 128)
+margin = Rect2(67, 56, 60, 92)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_death_6"]
+atlas = ExtResource("4_death")
+region = Rect2(864, 0, 168, 128)
+margin = Rect2(69, 56, 88, 92)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_death_7"]
+atlas = ExtResource("4_death")
+region = Rect2(1032, 0, 214, 128)
+margin = Rect2(70, 56, 42, 92)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_magic_0"]
+atlas = ExtResource("1_textura")
+region = Rect2(472, 944, 164, 179)
+margin = Rect2(77, 22, 156, 41)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_magic_1"]
+atlas = ExtResource("1_textura")
+region = Rect2(636, 944, 144, 179)
+margin = Rect2(90, 22, 176, 41)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_magic_2"]
+atlas = ExtResource("1_textura")
+region = Rect2(780, 944, 141, 179)
+margin = Rect2(87, 22, 179, 41)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_magic_3"]
+atlas = ExtResource("1_textura")
+region = Rect2(921, 944, 144, 179)
+margin = Rect2(88, 22, 176, 41)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_magic_4"]
+atlas = ExtResource("1_textura")
+region = Rect2(1065, 944, 178, 179)
+margin = Rect2(69, 22, 142, 41)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ultimate_0"]
+atlas = ExtResource("5_ultimate")
+region = Rect2(0, 0, 278, 167)
+margin = Rect2(15, 27, 42, 53)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ultimate_1"]
+atlas = ExtResource("5_ultimate")
+region = Rect2(278, 0, 211, 167)
+margin = Rect2(44, 27, 109, 53)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ultimate_2"]
+atlas = ExtResource("5_ultimate")
+region = Rect2(489, 0, 238, 167)
+margin = Rect2(37, 27, 82, 53)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ultimate_3"]
+atlas = ExtResource("5_ultimate")
+region = Rect2(727, 0, 277, 167)
+margin = Rect2(25, 27, 43, 53)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ultimate_4"]
+atlas = ExtResource("5_ultimate")
+region = Rect2(1004, 0, 252, 167)
+margin = Rect2(27, 27, 68, 53)
+filter_clip = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vinar"]
+animations = [{
+"frames": [{
+"duration": 2,
+"texture": SubResource("AtlasTexture_idle_1")
+}, {
+"duration": 1,
+"texture": SubResource("AtlasTexture_idle_2")
+}, {
+"duration": 1,
+"texture": SubResource("AtlasTexture_idle_3")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_idle_4")
+}, {
+"duration": 1,
+"texture": SubResource("AtlasTexture_idle_3")
+}, {
+"duration": 1,
+"texture": SubResource("AtlasTexture_idle_2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.04,
+"texture": SubResource("AtlasTexture_1")
+}, {
+"duration": 0.96,
+"texture": SubResource("AtlasTexture_2")
+}, {
+"duration": 1.04,
+"texture": SubResource("AtlasTexture_3")
+}, {
+"duration": 0.96,
+"texture": SubResource("AtlasTexture_4")
+}, {
+"duration": 1.04,
+"texture": SubResource("AtlasTexture_5")
+}, {
+"duration": 0.96,
+"texture": SubResource("AtlasTexture_6")
+}],
+"loop": true,
+"name": &"run",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.6,
+"texture": SubResource("AtlasTexture_7")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_8")
+}, {
+"duration": 1,
+"texture": SubResource("AtlasTexture_9")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_10")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_11")
+}, {
+"duration": 1,
+"texture": SubResource("AtlasTexture_12")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_13")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_14")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_death_1")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_death_2")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_death_3")
+}, {
+"duration": 1,
+"texture": SubResource("AtlasTexture_death_4")
+}, {
+"duration": 1,
+"texture": SubResource("AtlasTexture_death_5")
+}, {
+"duration": 1.35,
+"texture": SubResource("AtlasTexture_death_6")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_death_7")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.35,
+"texture": SubResource("AtlasTexture_magic_0")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_magic_1")
+}, {
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_magic_2")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_magic_3")
+}, {
+"duration": 1.65,
+"texture": SubResource("AtlasTexture_magic_4")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ultimate_0")
+}, {
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_ultimate_1")
+}, {
+"duration": 1.35,
+"texture": SubResource("AtlasTexture_ultimate_2")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_ultimate_3")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_ultimate_4")
+}],
+"loop": false,
+"name": &"ultimate",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vinar"]
+radius = 30.0
+
+[node name="Vinar" type="CharacterBody2D" unique_id=1179501962]
+motion_mode = 1
+script = ExtResource("2_vinar")
+CenaEfeitoMagia = ExtResource("6_efeito_magia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vinar")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 8.0
+target_desired_distance = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=117945520]
+sprite_frames = SubResource("SpriteFrames_vinar")
+animation = &"idle"
+offset = Vector2(0, -70)
+
+[node name="BarraVida" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = -60.0
+offset_top = -176.0
+offset_right = 60.0
+offset_bottom = -156.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_barra_fundo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_barra_vida")
+max_value = 12.0
+value = 12.0
+show_percentage = false
+
+[node name="Texto" type="Label" parent="BarraVida"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.1, 0.04, 0.06, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
+text = "Vinar  12/12 HP"
+horizontal_alignment = 1
+vertical_alignment = 1

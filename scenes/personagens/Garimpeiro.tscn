@@ -1,0 +1,364 @@
+[gd_scene format=3 uid="uid://bdo3tgrldpdfi"]
+
+[ext_resource type="Texture2D" uid="uid://cmpes0tc8ysww" path="res://assets/npc/vila_inicial/garimpeiro.png" id="1_eyioc"]
+[ext_resource type="Script" path="res://scripts/personagens/Garimpeiro.cs" id="2_dialogo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeiif"]
+size = Vector2(33, 14)
+
+[sub_resource type="Animation" id="Animation_RESET"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(8, 537, 161, 234)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-97, -232)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_idle"]
+resource_name = "idle"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(8, 537, 161, 234)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-97, -232)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.9, 1.35, 1.8),
+"transitions": PackedFloat32Array(-1.8, -1.8, -1.8, -1.8, -1.8),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708), Vector2(0.344, 0.347), Vector2(0.345, 0.351), Vector2(0.344, 0.347), Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_baixo"]
+resource_name = "andar_baixo"
+length = 0.68
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.34, 0.51),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(7, 792, 160, 218), Rect2(174, 792, 153, 217), Rect2(7, 792, 160, 218), Rect2(337, 794, 155, 214)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.34, 0.51),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-95, -216), Vector2(-91, -215), Vector2(-95, -216), Vector2(-90, -212)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_baixo_direita"]
+resource_name = "andar_baixo_direita"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(1192, 279, 148, 238), Rect2(1355, 281, 149, 239)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-89, -236), Vector2(-88, -237)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_direita"]
+resource_name = "andar_direita"
+length = 0.64
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(528, 277, 140, 237), Rect2(694, 277, 142, 241), Rect2(853, 280, 146, 238), Rect2(1014, 278, 144, 240)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-80, -235), Vector2(-82, -239), Vector2(-84, -236), Vector2(-79, -238)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_cima_direita"]
+resource_name = "andar_cima_direita"
+length = 0.64
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(543, 16, 137, 244), Rect2(700, 16, 135, 244), Rect2(856, 16, 139, 242), Rect2(700, 16, 135, 244)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-79, -242), Vector2(-74, -242), Vector2(-75, -240), Vector2(-74, -242)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_cima"]
+resource_name = "andar_cima"
+length = 0.68
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.34, 0.51),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(22, 14, 149, 244), Rect2(179, 14, 152, 243), Rect2(22, 14, 149, 244), Rect2(343, 14, 149, 245)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.34, 0.51),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-83, -242), Vector2(-86, -241), Vector2(-83, -242), Vector2(-88, -243)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_cima_esquerda"]
+resource_name = "andar_cima_esquerda"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(1223, 542, 149, 233), Rect2(1390, 541, 140, 233)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-64, -231), Vector2(-60, -231)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_esquerda"]
+resource_name = "andar_esquerda"
+length = 0.64
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(549, 541, 141, 233), Rect2(712, 541, 144, 230), Rect2(873, 541, 143, 230), Rect2(1054, 542, 148, 232)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-63, -231), Vector2(-60, -228), Vector2(-58, -228), Vector2(-60, -230)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="Animation" id="Animation_andar_baixo_esquerda"]
+resource_name = "andar_baixo_esquerda"
+length = 0.64
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharacterBody2D/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(548, 794, 148, 217), Rect2(712, 795, 145, 212), Rect2(872, 798, 143, 211), Rect2(1054, 796, 148, 214)]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterBody2D/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-66, -215), Vector2(-64, -210), Vector2(-62, -209), Vector2(-63, -212)]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterBody2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34264708, 0.34264708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_garimpeiro"]
+_data = {
+"RESET": SubResource("Animation_RESET"),
+"idle": SubResource("Animation_idle"),
+"andar_baixo": SubResource("Animation_andar_baixo"),
+"andar_baixo_direita": SubResource("Animation_andar_baixo_direita"),
+"andar_direita": SubResource("Animation_andar_direita"),
+"andar_cima_direita": SubResource("Animation_andar_cima_direita"),
+"andar_cima": SubResource("Animation_andar_cima"),
+"andar_cima_esquerda": SubResource("Animation_andar_cima_esquerda"),
+"andar_esquerda": SubResource("Animation_andar_esquerda"),
+"andar_baixo_esquerda": SubResource("Animation_andar_baixo_esquerda")
+}
+
+[node name="Garimpeiro" type="Node2D" unique_id=919143804]
+script = ExtResource("2_dialogo")
+Nome = "Garimpeiro"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1776142071]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=622733669]
+position = Vector2(1, 43)
+scale = Vector2(0.34264708, 0.34264708)
+texture = ExtResource("1_eyioc")
+centered = false
+offset = Vector2(-97, -232)
+region_enabled = true
+region_rect = Rect2(8, 537, 161, 234)
+region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1780101577]
+position = Vector2(1.5, 37)
+shape = SubResource("RectangleShape2D_yeiif")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries/ = SubResource("AnimationLibrary_garimpeiro")
+autoplay = "idle"

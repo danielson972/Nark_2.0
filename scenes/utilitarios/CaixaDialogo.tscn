@@ -1,0 +1,130 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/utilitarios/CaixaDialogo.cs" id="1_caixa"]
+
+[sub_resource type="StyleBoxFlat" id="PainelExterno"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.2, 0.13, 0.1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.76, 0.52, 0.27, 1)
+shadow_color = Color(0.09, 0.06, 0.05, 0.9)
+shadow_size = 4
+shadow_offset = Vector2(4, 4)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="Papel"]
+content_margin_left = 18.0
+content_margin_top = 12.0
+content_margin_right = 18.0
+content_margin_bottom = 12.0
+bg_color = Color(0.98, 0.88, 0.68, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.49, 0.31, 0.17, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="Opcao"]
+content_margin_left = 12.0
+content_margin_top = 5.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+bg_color = Color(0.26, 0.18, 0.13, 1)
+border_width_bottom = 3
+border_color = Color(0.13, 0.09, 0.07, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="OpcaoAtiva"]
+content_margin_left = 12.0
+content_margin_top = 5.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+bg_color = Color(0.42, 0.29, 0.15, 1)
+border_width_left = 4
+border_width_bottom = 3
+border_color = Color(0.96, 0.7, 0.32, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="Foco"]
+draw_center = false
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.98, 0.76, 0.38, 1)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="TemaDialogo"]
+default_font_size = 18
+Label/colors/font_color = Color(0.22, 0.12, 0.08, 1)
+Button/colors/font_color = Color(1, 0.91, 0.73, 1)
+Button/colors/font_focus_color = Color(1, 0.95, 0.81, 1)
+Button/styles/normal = SubResource("Opcao")
+Button/styles/hover = SubResource("OpcaoAtiva")
+Button/styles/pressed = SubResource("OpcaoAtiva")
+Button/styles/focus = SubResource("Foco")
+
+[node name="CaixaDialogo" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_caixa")
+
+[node name="Aviso" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -64.0
+offset_right = 160.0
+offset_bottom = -24.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_colors/font_color = Color(1, 0.92, 0.75, 1)
+theme_override_styles/normal = SubResource("Opcao")
+
+[node name="Painel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.15
+anchor_top = 1.0
+anchor_right = 0.85
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme = SubResource("TemaDialogo")
+theme_override_styles/panel = SubResource("PainelExterno")
+
+[node name="Papel" type="PanelContainer" parent="Painel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("Papel")
+
+[node name="Conteudo" type="VBoxContainer" parent="Painel/Papel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Nome" type="Label" parent="Painel/Papel/Conteudo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.52, 0.23, 0.1, 1)
+theme_override_font_sizes/font_size = 22
+
+[node name="Fala" type="Label" parent="Painel/Papel/Conteudo"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Opcoes" type="VBoxContainer" parent="Painel/Papel/Conteudo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 5

@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://b7nixgg126vf0"]
+
+[ext_resource type="Texture2D" uid="uid://1pri0j0dhici" path="res://assets/npc/vila_inicial/campones.png" id="1"]
+[ext_resource type="Script" uid="uid://dblb2baydfous" path="res://scripts/personagens/Campones.cs" id="2"]
+
+[sub_resource type="Animation" id="Animation_baixo"]
+resource_name = "baixo"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(42, 0, 166, 282), Rect2(208, 0, 166, 282), Rect2(374, 0, 166, 282), Rect2(208, 0, 166, 282)]
+}
+
+[sub_resource type="Animation" id="Animation_baixo_direita"]
+resource_name = "baixo_direita"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(594, 0, 166, 282), Rect2(769, 0, 166, 282), Rect2(939, 0, 166, 282), Rect2(769, 0, 166, 282)]
+}
+
+[sub_resource type="Animation" id="Animation_baixo_esquerda"]
+resource_name = "baixo_esquerda"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(610, 596, 166, 282), Rect2(788, 596, 166, 282), Rect2(965, 596, 166, 282), Rect2(788, 596, 166, 282)]
+}
+
+[sub_resource type="Animation" id="Animation_cima"]
+resource_name = "cima"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(594, 298, 166, 282), Rect2(765, 298, 166, 282), Rect2(937, 298, 166, 282), Rect2(765, 298, 166, 282)]
+}
+
+[sub_resource type="Animation" id="Animation_cima_direita"]
+resource_name = "cima_direita"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(40, 298, 166, 282), Rect2(218, 298, 166, 282), Rect2(396, 298, 166, 282), Rect2(218, 298, 166, 282)]
+}
+
+[sub_resource type="Animation" id="Animation_cima_esquerda"]
+resource_name = "cima_esquerda"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(1161, 298, 166, 282), Rect2(1336, 298, 166, 282), Rect2(1516, 298, 166, 282), Rect2(1336, 298, 166, 282)]
+}
+
+[sub_resource type="Animation" id="Animation_direita"]
+resource_name = "direita"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(1162, 0, 166, 282), Rect2(1342, 0, 166, 282), Rect2(1520, 0, 166, 282), Rect2(1342, 0, 166, 282)]
+}
+
+[sub_resource type="Animation" id="Animation_esquerda"]
+resource_name = "esquerda"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(28, 596, 166, 282), Rect2(207, 596, 166, 282), Rect2(391, 596, 166, 282), Rect2(207, 596, 166, 282)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_direcoes"]
+_data = {
+&"baixo": SubResource("Animation_baixo"),
+&"baixo_direita": SubResource("Animation_baixo_direita"),
+&"baixo_esquerda": SubResource("Animation_baixo_esquerda"),
+&"cima": SubResource("Animation_cima"),
+&"cima_direita": SubResource("Animation_cima_direita"),
+&"cima_esquerda": SubResource("Animation_cima_esquerda"),
+&"direita": SubResource("Animation_direita"),
+&"esquerda": SubResource("Animation_esquerda")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_baixo"]
+animation = &"baixo"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_baixo_direita"]
+animation = &"baixo_direita"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_baixo_esquerda"]
+animation = &"baixo_esquerda"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_cima"]
+animation = &"cima"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_cima_direita"]
+animation = &"cima_direita"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_cima_esquerda"]
+animation = &"cima_esquerda"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_direita"]
+animation = &"direita"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNode_esquerda"]
+animation = &"esquerda"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="Transition_inicio"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="StateMachine_direcoes"]
+states/End/position = Vector2(780, 90)
+states/Start/position = Vector2(90, 90)
+states/baixo/node = SubResource("AnimationNode_baixo")
+states/baixo/position = Vector2(260, 90)
+states/baixo_direita/node = SubResource("AnimationNode_baixo_direita")
+states/baixo_direita/position = Vector2(430, 90)
+states/baixo_esquerda/node = SubResource("AnimationNode_baixo_esquerda")
+states/baixo_esquerda/position = Vector2(430, 270)
+states/cima/node = SubResource("AnimationNode_cima")
+states/cima/position = Vector2(430, 180)
+states/cima_direita/node = SubResource("AnimationNode_cima_direita")
+states/cima_direita/position = Vector2(260, 180)
+states/cima_esquerda/node = SubResource("AnimationNode_cima_esquerda")
+states/cima_esquerda/position = Vector2(600, 180)
+states/direita/node = SubResource("AnimationNode_direita")
+states/direita/position = Vector2(600, 90)
+states/esquerda/node = SubResource("AnimationNode_esquerda")
+states/esquerda/position = Vector2(260, 270)
+transitions = ["Start", "baixo", SubResource("Transition_inicio")]
+
+[node name="Campones" type="Node2D" unique_id=1077141286]
+script = ExtResource("2")
+Nome = "Camponês"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=607017055]
+texture_filter = 1
+position = Vector2(2.525, 35.67667)
+scale = Vector2(0.30527776, 0.30527776)
+texture = ExtResource("1")
+offset = Vector2(0, -135)
+region_enabled = true
+region_rect = Rect2(42, 0, 166, 282)
+region_filter_clip_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=35867941]
+libraries/ = SubResource("AnimationLibrary_direcoes")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1291123064]
+active = false
+tree_root = SubResource("StateMachine_direcoes")
+anim_player = NodePath("../AnimationPlayer")

@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://du8ikme26pkig"]
+
+[ext_resource type="Texture2D" uid="uid://ddlntgtflxh20" path="res://assets/sprites/sprite_sheet/caverna/pedra_g_c_ouro.png" id="1_dl1hy"]
+
+[ext_resource type="Script" path="res://scripts/mineracao/PedraMineravel.cs" id="2_mineracao"]
+[ext_resource type="PackedScene" path="res://scenes/mineracao/Lascas.tscn" id="3_lascas"]
+
+[sub_resource type="Animation" id="Animation_dl1hy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.273]
+}
+
+[sub_resource type="Animation" id="Animation_r1mnc"]
+resource_name = "brilho"
+length = 0.33333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.273]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8mqb"]
+_data = {
+&"RESET": SubResource("Animation_dl1hy"),
+&"brilho": SubResource("Animation_r1mnc")
+}
+
+[node name="PedraComOuro" type="Node2D" unique_id=5406454]
+script = ExtResource("2_mineracao")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=354003581]
+scale = Vector2(0.20857772, 0.20857772)
+texture = ExtResource("1_dl1hy")
+hframes = 6
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=419780068]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=858820790]
+polygon = PackedVector2Array(0, 95.88752, -33.56063, 115.06502, -71.91564, 110.270645, -105.47627, 105.47627, -119.8594, 81.50439, -148.62566, 47.94376, -115.06502, -62.326885, -76.710014, -81.50439, -52.738136, -134.24252, -19.177504, -148.62566, 23.97188, -139.0369, 71.91564, -115.06502, 86.29877, -62.326885, 115.06502, -57.53251, 134.24252, -43.149384, 158.2144, 43.149384, 148.62566, 71.91564, 129.44815, 86.29877, 91.09314, 115.06502, 52.738136, 119.8594)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=996852163]
+libraries/ = SubResource("AnimationLibrary_k8mqb")
+autoplay = &"brilho"
+speed_scale = 0.273
+
+[node name="Lascas" parent="." instance=ExtResource("3_lascas")]
+
+[node name="AvisoMineracao" type="Label" parent="."]
+visible = false
+z_index = 10
+offset_left = -190.0
+offset_top = -80.0
+offset_right = 190.0
+offset_bottom = -50.0
+mouse_filter = 2
+text = "Pressione E para minerar"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
