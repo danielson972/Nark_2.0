@@ -1,0 +1,438 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/mobs/javali/habilidades/atack_carreira_efeito.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="Impacto_0_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_0_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 0, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_0_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 0, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_0_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 0, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_0_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 0, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_0_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 0, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_0_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 0, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_0_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 0, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_1_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 96, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_1_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 96, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_1_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 96, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_1_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 96, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_1_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 96, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_1_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 96, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_1_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 96, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_1_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 96, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_2_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 192, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_2_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 192, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_2_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 192, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_2_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 192, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_2_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 192, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_2_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 192, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_2_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 192, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_2_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 192, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_3_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 288, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_3_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 288, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_3_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 288, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_3_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 288, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_3_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 288, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_3_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 288, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_3_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 288, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_3_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 288, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_4_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 384, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_4_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 384, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_4_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 384, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_4_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 384, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_4_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 384, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_4_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 384, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_4_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 384, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_4_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 384, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_5_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 480, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_5_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 480, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_5_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 480, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_5_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 480, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_5_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 480, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_5_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 480, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_5_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 480, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_5_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 480, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_6_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 576, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_6_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 576, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_6_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 576, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_6_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 576, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_6_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 576, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_6_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 576, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_6_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 576, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_6_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 576, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_7_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 672, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_7_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 672, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_7_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 672, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_7_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 672, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_7_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 672, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_7_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 672, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_7_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 672, 96, 96)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Impacto_7_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 672, 96, 96)
+filter_clip = true
+
+[sub_resource type="SpriteFrames" id="Frames"]
+animations = [
+{
+"frames": [{"duration": 1.0, "texture": SubResource("Impacto_0_0")},
+{"duration": 1.0, "texture": SubResource("Impacto_0_1")},
+{"duration": 1.0, "texture": SubResource("Impacto_0_2")},
+{"duration": 1.0, "texture": SubResource("Impacto_0_3")},
+{"duration": 1.0, "texture": SubResource("Impacto_0_4")},
+{"duration": 1.0, "texture": SubResource("Impacto_0_5")},
+{"duration": 1.0, "texture": SubResource("Impacto_0_6")},
+{"duration": 1.0, "texture": SubResource("Impacto_0_7")}],
+"loop": false,
+"name": &"impacto_0",
+"speed": 16.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("Impacto_1_0")},
+{"duration": 1.0, "texture": SubResource("Impacto_1_1")},
+{"duration": 1.0, "texture": SubResource("Impacto_1_2")},
+{"duration": 1.0, "texture": SubResource("Impacto_1_3")},
+{"duration": 1.0, "texture": SubResource("Impacto_1_4")},
+{"duration": 1.0, "texture": SubResource("Impacto_1_5")},
+{"duration": 1.0, "texture": SubResource("Impacto_1_6")},
+{"duration": 1.0, "texture": SubResource("Impacto_1_7")}],
+"loop": false,
+"name": &"impacto_1",
+"speed": 16.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("Impacto_2_0")},
+{"duration": 1.0, "texture": SubResource("Impacto_2_1")},
+{"duration": 1.0, "texture": SubResource("Impacto_2_2")},
+{"duration": 1.0, "texture": SubResource("Impacto_2_3")},
+{"duration": 1.0, "texture": SubResource("Impacto_2_4")},
+{"duration": 1.0, "texture": SubResource("Impacto_2_5")},
+{"duration": 1.0, "texture": SubResource("Impacto_2_6")},
+{"duration": 1.0, "texture": SubResource("Impacto_2_7")}],
+"loop": false,
+"name": &"impacto_2",
+"speed": 16.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("Impacto_3_0")},
+{"duration": 1.0, "texture": SubResource("Impacto_3_1")},
+{"duration": 1.0, "texture": SubResource("Impacto_3_2")},
+{"duration": 1.0, "texture": SubResource("Impacto_3_3")},
+{"duration": 1.0, "texture": SubResource("Impacto_3_4")},
+{"duration": 1.0, "texture": SubResource("Impacto_3_5")},
+{"duration": 1.0, "texture": SubResource("Impacto_3_6")},
+{"duration": 1.0, "texture": SubResource("Impacto_3_7")}],
+"loop": false,
+"name": &"impacto_3",
+"speed": 16.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("Impacto_4_0")},
+{"duration": 1.0, "texture": SubResource("Impacto_4_1")},
+{"duration": 1.0, "texture": SubResource("Impacto_4_2")},
+{"duration": 1.0, "texture": SubResource("Impacto_4_3")},
+{"duration": 1.0, "texture": SubResource("Impacto_4_4")},
+{"duration": 1.0, "texture": SubResource("Impacto_4_5")},
+{"duration": 1.0, "texture": SubResource("Impacto_4_6")},
+{"duration": 1.0, "texture": SubResource("Impacto_4_7")}],
+"loop": false,
+"name": &"impacto_4",
+"speed": 16.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("Impacto_5_0")},
+{"duration": 1.0, "texture": SubResource("Impacto_5_1")},
+{"duration": 1.0, "texture": SubResource("Impacto_5_2")},
+{"duration": 1.0, "texture": SubResource("Impacto_5_3")},
+{"duration": 1.0, "texture": SubResource("Impacto_5_4")},
+{"duration": 1.0, "texture": SubResource("Impacto_5_5")},
+{"duration": 1.0, "texture": SubResource("Impacto_5_6")},
+{"duration": 1.0, "texture": SubResource("Impacto_5_7")}],
+"loop": false,
+"name": &"impacto_5",
+"speed": 16.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("Impacto_6_0")},
+{"duration": 1.0, "texture": SubResource("Impacto_6_1")},
+{"duration": 1.0, "texture": SubResource("Impacto_6_2")},
+{"duration": 1.0, "texture": SubResource("Impacto_6_3")},
+{"duration": 1.0, "texture": SubResource("Impacto_6_4")},
+{"duration": 1.0, "texture": SubResource("Impacto_6_5")},
+{"duration": 1.0, "texture": SubResource("Impacto_6_6")},
+{"duration": 1.0, "texture": SubResource("Impacto_6_7")}],
+"loop": false,
+"name": &"impacto_6",
+"speed": 16.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("Impacto_7_0")},
+{"duration": 1.0, "texture": SubResource("Impacto_7_1")},
+{"duration": 1.0, "texture": SubResource("Impacto_7_2")},
+{"duration": 1.0, "texture": SubResource("Impacto_7_3")},
+{"duration": 1.0, "texture": SubResource("Impacto_7_4")},
+{"duration": 1.0, "texture": SubResource("Impacto_7_5")},
+{"duration": 1.0, "texture": SubResource("Impacto_7_6")},
+{"duration": 1.0, "texture": SubResource("Impacto_7_7")}],
+"loop": false,
+"name": &"impacto_7",
+"speed": 16.0
+}]
+
+[node name="ImpactoCarreiraJavali" type="AnimatedSprite2D"]
+z_index = 5
+texture_filter = 1
+position = Vector2(0, -26)
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("Frames")
+animation = &"impacto_0"

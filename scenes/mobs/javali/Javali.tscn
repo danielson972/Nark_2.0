@@ -1,0 +1,2209 @@
+[gd_scene format=3 uid="uid://dp5jmc3xfadc6"]
+
+[ext_resource type="Texture2D" uid="uid://h7k6i3107sm5" path="res://assets/mobs/javali/javal_andando.png" id="1_axlw1"]
+[ext_resource type="Script" uid="uid://cif0xf3cl6tn2" path="res://scripts/mobs/Javali.cs" id="2_javali"]
+[ext_resource type="Texture2D" uid="uid://bwj2kpwm6swta" path="res://assets/mobs/javali/javali_parado.png" id="3_parado"]
+
+[ext_resource type="Texture2D" path="res://assets/mobs/javali/habilidades/atack_carreira.png" id="4_carreira"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yeiif"]
+radius = 25.0
+height = 76.0
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_32"]
+atlas = ExtResource("3_parado")
+region = Rect2(0, 640, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_v60e1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Atlas_parado_32")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_32"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(0, 627, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_33"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(157, 627, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_34"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(314, 627, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_35"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(470, 627, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_36"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(627, 627, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_37"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(784, 627, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_38"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(940, 627, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_39"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(1097, 627, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_er6yu"]
+resource_name = "andando"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_andando_32"), SubResource("Atlas_andando_33"), SubResource("Atlas_andando_34"), SubResource("Atlas_andando_35"), SubResource("Atlas_andando_36"), SubResource("Atlas_andando_37"), SubResource("Atlas_andando_38"), SubResource("Atlas_andando_39")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_0"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(0, 0, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_1"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(157, 0, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_2"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(314, 0, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_3"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(470, 0, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_4"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(627, 0, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_5"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(784, 0, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_6"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(940, 0, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_7"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(1097, 0, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_axlw1"]
+resource_name = "andando_costa"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_andando_0"), SubResource("Atlas_andando_1"), SubResource("Atlas_andando_2"), SubResource("Atlas_andando_3"), SubResource("Atlas_andando_4"), SubResource("Atlas_andando_5"), SubResource("Atlas_andando_6"), SubResource("Atlas_andando_7")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_8"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(0, 157, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_9"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(157, 157, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_10"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(314, 157, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_11"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(470, 157, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_12"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(627, 157, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_13"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(784, 157, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_14"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(940, 157, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_15"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(1097, 157, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_costa_direita"]
+resource_name = "andando_costa_direita"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_andando_8"), SubResource("Atlas_andando_9"), SubResource("Atlas_andando_10"), SubResource("Atlas_andando_11"), SubResource("Atlas_andando_12"), SubResource("Atlas_andando_13"), SubResource("Atlas_andando_14"), SubResource("Atlas_andando_15")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_56"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(0, 1097, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_57"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(157, 1097, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_58"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(314, 1097, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_59"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(470, 1097, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_60"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(627, 1097, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_61"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(784, 1097, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_62"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(940, 1097, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_63"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(1097, 1097, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_costa_esquerda"]
+resource_name = "andando_costa_esquerda"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_andando_56"), SubResource("Atlas_andando_57"), SubResource("Atlas_andando_58"), SubResource("Atlas_andando_59"), SubResource("Atlas_andando_60"), SubResource("Atlas_andando_61"), SubResource("Atlas_andando_62"), SubResource("Atlas_andando_63")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_16"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(0, 314, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_17"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(157, 314, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_18"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(314, 314, 156, 156)
+margin = Rect2(6, 6, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_19"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(470, 314, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_20"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(627, 314, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_21"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(784, 314, 156, 156)
+margin = Rect2(6, 6, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_22"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(940, 314, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_23"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(1097, 314, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_direita"]
+resource_name = "andando_direita"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_andando_16"), SubResource("Atlas_andando_17"), SubResource("Atlas_andando_18"), SubResource("Atlas_andando_19"), SubResource("Atlas_andando_20"), SubResource("Atlas_andando_21"), SubResource("Atlas_andando_22"), SubResource("Atlas_andando_23")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_48"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(0, 940, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_49"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(157, 940, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_50"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(314, 940, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_51"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(470, 940, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_52"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(627, 940, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_53"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(784, 940, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_54"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(940, 940, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_55"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(1097, 940, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_esquerda"]
+resource_name = "andando_esquerda"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_andando_48"), SubResource("Atlas_andando_49"), SubResource("Atlas_andando_50"), SubResource("Atlas_andando_51"), SubResource("Atlas_andando_52"), SubResource("Atlas_andando_53"), SubResource("Atlas_andando_54"), SubResource("Atlas_andando_55")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_24"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(0, 470, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_25"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(157, 470, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_26"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(314, 470, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_27"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(470, 470, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_28"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(627, 470, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_29"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(784, 470, 156, 157)
+margin = Rect2(6, 5, 12, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_30"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(940, 470, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_31"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(1097, 470, 157, 157)
+margin = Rect2(5, 5, 11, 11)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_frente_direita"]
+resource_name = "andando_frente_direita"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_andando_24"), SubResource("Atlas_andando_25"), SubResource("Atlas_andando_26"), SubResource("Atlas_andando_27"), SubResource("Atlas_andando_28"), SubResource("Atlas_andando_29"), SubResource("Atlas_andando_30"), SubResource("Atlas_andando_31")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_40"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(0, 784, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_41"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(157, 784, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_42"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(314, 784, 156, 156)
+margin = Rect2(6, 6, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_43"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(470, 784, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_44"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(627, 784, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_45"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(784, 784, 156, 156)
+margin = Rect2(6, 6, 12, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_46"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(940, 784, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_andando_47"]
+atlas = ExtResource("1_axlw1")
+region = Rect2(1097, 784, 157, 156)
+margin = Rect2(5, 6, 11, 12)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_frente_esquerda"]
+resource_name = "andando_frente_esquerda"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_andando_40"), SubResource("Atlas_andando_41"), SubResource("Atlas_andando_42"), SubResource("Atlas_andando_43"), SubResource("Atlas_andando_44"), SubResource("Atlas_andando_45"), SubResource("Atlas_andando_46"), SubResource("Atlas_andando_47")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_33"]
+atlas = ExtResource("3_parado")
+region = Rect2(160, 640, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_34"]
+atlas = ExtResource("3_parado")
+region = Rect2(320, 640, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_35"]
+atlas = ExtResource("3_parado")
+region = Rect2(480, 640, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_36"]
+atlas = ExtResource("3_parado")
+region = Rect2(640, 640, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_37"]
+atlas = ExtResource("3_parado")
+region = Rect2(800, 640, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_38"]
+atlas = ExtResource("3_parado")
+region = Rect2(960, 640, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_39"]
+atlas = ExtResource("3_parado")
+region = Rect2(1120, 640, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_parado"]
+resource_name = "parado"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_parado_32"), SubResource("Atlas_parado_33"), SubResource("Atlas_parado_34"), SubResource("Atlas_parado_35"), SubResource("Atlas_parado_36"), SubResource("Atlas_parado_37"), SubResource("Atlas_parado_38"), SubResource("Atlas_parado_39")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_0"]
+atlas = ExtResource("3_parado")
+region = Rect2(0, 0, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_1"]
+atlas = ExtResource("3_parado")
+region = Rect2(160, 0, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_2"]
+atlas = ExtResource("3_parado")
+region = Rect2(320, 0, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_3"]
+atlas = ExtResource("3_parado")
+region = Rect2(480, 0, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_4"]
+atlas = ExtResource("3_parado")
+region = Rect2(640, 0, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_5"]
+atlas = ExtResource("3_parado")
+region = Rect2(800, 0, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_6"]
+atlas = ExtResource("3_parado")
+region = Rect2(960, 0, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_7"]
+atlas = ExtResource("3_parado")
+region = Rect2(1120, 0, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_parado_costa"]
+resource_name = "parado_costa"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_parado_0"), SubResource("Atlas_parado_1"), SubResource("Atlas_parado_2"), SubResource("Atlas_parado_3"), SubResource("Atlas_parado_4"), SubResource("Atlas_parado_5"), SubResource("Atlas_parado_6"), SubResource("Atlas_parado_7")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_8"]
+atlas = ExtResource("3_parado")
+region = Rect2(0, 160, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_9"]
+atlas = ExtResource("3_parado")
+region = Rect2(160, 160, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_10"]
+atlas = ExtResource("3_parado")
+region = Rect2(320, 160, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_11"]
+atlas = ExtResource("3_parado")
+region = Rect2(480, 160, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_12"]
+atlas = ExtResource("3_parado")
+region = Rect2(640, 160, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_13"]
+atlas = ExtResource("3_parado")
+region = Rect2(800, 160, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_14"]
+atlas = ExtResource("3_parado")
+region = Rect2(960, 160, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_15"]
+atlas = ExtResource("3_parado")
+region = Rect2(1120, 160, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_parado_costa_direita"]
+resource_name = "parado_costa_direita"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_parado_8"), SubResource("Atlas_parado_9"), SubResource("Atlas_parado_10"), SubResource("Atlas_parado_11"), SubResource("Atlas_parado_12"), SubResource("Atlas_parado_13"), SubResource("Atlas_parado_14"), SubResource("Atlas_parado_15")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_56"]
+atlas = ExtResource("3_parado")
+region = Rect2(0, 1120, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_57"]
+atlas = ExtResource("3_parado")
+region = Rect2(160, 1120, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_58"]
+atlas = ExtResource("3_parado")
+region = Rect2(320, 1120, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_59"]
+atlas = ExtResource("3_parado")
+region = Rect2(480, 1120, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_60"]
+atlas = ExtResource("3_parado")
+region = Rect2(640, 1120, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_61"]
+atlas = ExtResource("3_parado")
+region = Rect2(800, 1120, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_62"]
+atlas = ExtResource("3_parado")
+region = Rect2(960, 1120, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_63"]
+atlas = ExtResource("3_parado")
+region = Rect2(1120, 1120, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_parado_costa_esquerda"]
+resource_name = "parado_costa_esquerda"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_parado_56"), SubResource("Atlas_parado_57"), SubResource("Atlas_parado_58"), SubResource("Atlas_parado_59"), SubResource("Atlas_parado_60"), SubResource("Atlas_parado_61"), SubResource("Atlas_parado_62"), SubResource("Atlas_parado_63")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_16"]
+atlas = ExtResource("3_parado")
+region = Rect2(0, 320, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_17"]
+atlas = ExtResource("3_parado")
+region = Rect2(160, 320, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_18"]
+atlas = ExtResource("3_parado")
+region = Rect2(320, 320, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_19"]
+atlas = ExtResource("3_parado")
+region = Rect2(480, 320, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_20"]
+atlas = ExtResource("3_parado")
+region = Rect2(640, 320, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_21"]
+atlas = ExtResource("3_parado")
+region = Rect2(800, 320, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_22"]
+atlas = ExtResource("3_parado")
+region = Rect2(960, 320, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_23"]
+atlas = ExtResource("3_parado")
+region = Rect2(1120, 320, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_parado_direita"]
+resource_name = "parado_direita"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_parado_16"), SubResource("Atlas_parado_17"), SubResource("Atlas_parado_18"), SubResource("Atlas_parado_19"), SubResource("Atlas_parado_20"), SubResource("Atlas_parado_21"), SubResource("Atlas_parado_22"), SubResource("Atlas_parado_23")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_48"]
+atlas = ExtResource("3_parado")
+region = Rect2(0, 960, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_49"]
+atlas = ExtResource("3_parado")
+region = Rect2(160, 960, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_50"]
+atlas = ExtResource("3_parado")
+region = Rect2(320, 960, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_51"]
+atlas = ExtResource("3_parado")
+region = Rect2(480, 960, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_52"]
+atlas = ExtResource("3_parado")
+region = Rect2(640, 960, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_53"]
+atlas = ExtResource("3_parado")
+region = Rect2(800, 960, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_54"]
+atlas = ExtResource("3_parado")
+region = Rect2(960, 960, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_55"]
+atlas = ExtResource("3_parado")
+region = Rect2(1120, 960, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_parado_esquerda"]
+resource_name = "parado_esquerda"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_parado_48"), SubResource("Atlas_parado_49"), SubResource("Atlas_parado_50"), SubResource("Atlas_parado_51"), SubResource("Atlas_parado_52"), SubResource("Atlas_parado_53"), SubResource("Atlas_parado_54"), SubResource("Atlas_parado_55")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_24"]
+atlas = ExtResource("3_parado")
+region = Rect2(0, 480, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_25"]
+atlas = ExtResource("3_parado")
+region = Rect2(160, 480, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_26"]
+atlas = ExtResource("3_parado")
+region = Rect2(320, 480, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_27"]
+atlas = ExtResource("3_parado")
+region = Rect2(480, 480, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_28"]
+atlas = ExtResource("3_parado")
+region = Rect2(640, 480, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_29"]
+atlas = ExtResource("3_parado")
+region = Rect2(800, 480, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_30"]
+atlas = ExtResource("3_parado")
+region = Rect2(960, 480, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_31"]
+atlas = ExtResource("3_parado")
+region = Rect2(1120, 480, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_parado_frente_direita"]
+resource_name = "parado_frente_direita"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_parado_24"), SubResource("Atlas_parado_25"), SubResource("Atlas_parado_26"), SubResource("Atlas_parado_27"), SubResource("Atlas_parado_28"), SubResource("Atlas_parado_29"), SubResource("Atlas_parado_30"), SubResource("Atlas_parado_31")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_40"]
+atlas = ExtResource("3_parado")
+region = Rect2(0, 800, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_41"]
+atlas = ExtResource("3_parado")
+region = Rect2(160, 800, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_42"]
+atlas = ExtResource("3_parado")
+region = Rect2(320, 800, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_43"]
+atlas = ExtResource("3_parado")
+region = Rect2(480, 800, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_44"]
+atlas = ExtResource("3_parado")
+region = Rect2(640, 800, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_45"]
+atlas = ExtResource("3_parado")
+region = Rect2(800, 800, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_46"]
+atlas = ExtResource("3_parado")
+region = Rect2(960, 800, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_parado_47"]
+atlas = ExtResource("3_parado")
+region = Rect2(1120, 800, 160, 160)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_parado_frente_esquerda"]
+resource_name = "parado_frente_esquerda"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_parado_40"), SubResource("Atlas_parado_41"), SubResource("Atlas_parado_42"), SubResource("Atlas_parado_43"), SubResource("Atlas_parado_44"), SubResource("Atlas_parado_45"), SubResource("Atlas_parado_46"), SubResource("Atlas_parado_47")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_0"]
+atlas = ExtResource("4_carreira")
+region = Rect2(0, 0, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_1"]
+atlas = ExtResource("4_carreira")
+region = Rect2(192, 0, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_2"]
+atlas = ExtResource("4_carreira")
+region = Rect2(384, 0, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_3"]
+atlas = ExtResource("4_carreira")
+region = Rect2(576, 0, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_4"]
+atlas = ExtResource("4_carreira")
+region = Rect2(768, 0, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_5"]
+atlas = ExtResource("4_carreira")
+region = Rect2(960, 0, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_6"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1152, 0, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_7"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1344, 0, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_8"]
+atlas = ExtResource("4_carreira")
+region = Rect2(0, 192, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_9"]
+atlas = ExtResource("4_carreira")
+region = Rect2(192, 192, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_10"]
+atlas = ExtResource("4_carreira")
+region = Rect2(384, 192, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_11"]
+atlas = ExtResource("4_carreira")
+region = Rect2(576, 192, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_12"]
+atlas = ExtResource("4_carreira")
+region = Rect2(768, 192, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_13"]
+atlas = ExtResource("4_carreira")
+region = Rect2(960, 192, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_14"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1152, 192, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_15"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1344, 192, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_16"]
+atlas = ExtResource("4_carreira")
+region = Rect2(0, 384, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_17"]
+atlas = ExtResource("4_carreira")
+region = Rect2(192, 384, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_18"]
+atlas = ExtResource("4_carreira")
+region = Rect2(384, 384, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_19"]
+atlas = ExtResource("4_carreira")
+region = Rect2(576, 384, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_20"]
+atlas = ExtResource("4_carreira")
+region = Rect2(768, 384, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_21"]
+atlas = ExtResource("4_carreira")
+region = Rect2(960, 384, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_22"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1152, 384, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_23"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1344, 384, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_24"]
+atlas = ExtResource("4_carreira")
+region = Rect2(0, 576, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_25"]
+atlas = ExtResource("4_carreira")
+region = Rect2(192, 576, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_26"]
+atlas = ExtResource("4_carreira")
+region = Rect2(384, 576, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_27"]
+atlas = ExtResource("4_carreira")
+region = Rect2(576, 576, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_28"]
+atlas = ExtResource("4_carreira")
+region = Rect2(768, 576, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_29"]
+atlas = ExtResource("4_carreira")
+region = Rect2(960, 576, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_30"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1152, 576, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_31"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1344, 576, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_32"]
+atlas = ExtResource("4_carreira")
+region = Rect2(0, 768, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_33"]
+atlas = ExtResource("4_carreira")
+region = Rect2(192, 768, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_34"]
+atlas = ExtResource("4_carreira")
+region = Rect2(384, 768, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_35"]
+atlas = ExtResource("4_carreira")
+region = Rect2(576, 768, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_36"]
+atlas = ExtResource("4_carreira")
+region = Rect2(768, 768, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_37"]
+atlas = ExtResource("4_carreira")
+region = Rect2(960, 768, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_38"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1152, 768, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_39"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1344, 768, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_40"]
+atlas = ExtResource("4_carreira")
+region = Rect2(0, 960, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_41"]
+atlas = ExtResource("4_carreira")
+region = Rect2(192, 960, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_42"]
+atlas = ExtResource("4_carreira")
+region = Rect2(384, 960, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_43"]
+atlas = ExtResource("4_carreira")
+region = Rect2(576, 960, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_44"]
+atlas = ExtResource("4_carreira")
+region = Rect2(768, 960, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_45"]
+atlas = ExtResource("4_carreira")
+region = Rect2(960, 960, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_46"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1152, 960, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_47"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1344, 960, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_48"]
+atlas = ExtResource("4_carreira")
+region = Rect2(0, 1152, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_49"]
+atlas = ExtResource("4_carreira")
+region = Rect2(192, 1152, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_50"]
+atlas = ExtResource("4_carreira")
+region = Rect2(384, 1152, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_51"]
+atlas = ExtResource("4_carreira")
+region = Rect2(576, 1152, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_52"]
+atlas = ExtResource("4_carreira")
+region = Rect2(768, 1152, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_53"]
+atlas = ExtResource("4_carreira")
+region = Rect2(960, 1152, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_54"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1152, 1152, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_55"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1344, 1152, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_56"]
+atlas = ExtResource("4_carreira")
+region = Rect2(0, 1344, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_57"]
+atlas = ExtResource("4_carreira")
+region = Rect2(192, 1344, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_58"]
+atlas = ExtResource("4_carreira")
+region = Rect2(384, 1344, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_59"]
+atlas = ExtResource("4_carreira")
+region = Rect2(576, 1344, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_60"]
+atlas = ExtResource("4_carreira")
+region = Rect2(768, 1344, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_61"]
+atlas = ExtResource("4_carreira")
+region = Rect2(960, 1344, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_62"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1152, 1344, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_carreira_63"]
+atlas = ExtResource("4_carreira")
+region = Rect2(1344, 1344, 192, 192)
+margin = Rect2(4, 4, 8, 8)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_atack_carreira_costa"]
+resource_name = "atack_carreira_costa"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_carreira_0"), SubResource("Atlas_carreira_1"), SubResource("Atlas_carreira_2"), SubResource("Atlas_carreira_3"), SubResource("Atlas_carreira_4"), SubResource("Atlas_carreira_5"), SubResource("Atlas_carreira_6"), SubResource("Atlas_carreira_7")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="Animation" id="Animation_atack_carreira_costa_direita"]
+resource_name = "atack_carreira_costa_direita"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_carreira_8"), SubResource("Atlas_carreira_9"), SubResource("Atlas_carreira_10"), SubResource("Atlas_carreira_11"), SubResource("Atlas_carreira_12"), SubResource("Atlas_carreira_13"), SubResource("Atlas_carreira_14"), SubResource("Atlas_carreira_15")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="Animation" id="Animation_atack_carreira_direita"]
+resource_name = "atack_carreira_direita"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_carreira_16"), SubResource("Atlas_carreira_17"), SubResource("Atlas_carreira_18"), SubResource("Atlas_carreira_19"), SubResource("Atlas_carreira_20"), SubResource("Atlas_carreira_21"), SubResource("Atlas_carreira_22"), SubResource("Atlas_carreira_23")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="Animation" id="Animation_atack_carreira_frente_direita"]
+resource_name = "atack_carreira_frente_direita"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_carreira_24"), SubResource("Atlas_carreira_25"), SubResource("Atlas_carreira_26"), SubResource("Atlas_carreira_27"), SubResource("Atlas_carreira_28"), SubResource("Atlas_carreira_29"), SubResource("Atlas_carreira_30"), SubResource("Atlas_carreira_31")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="Animation" id="Animation_atack_carreira"]
+resource_name = "atack_carreira"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_carreira_32"), SubResource("Atlas_carreira_33"), SubResource("Atlas_carreira_34"), SubResource("Atlas_carreira_35"), SubResource("Atlas_carreira_36"), SubResource("Atlas_carreira_37"), SubResource("Atlas_carreira_38"), SubResource("Atlas_carreira_39")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="Animation" id="Animation_atack_carreira_frente_esquerda"]
+resource_name = "atack_carreira_frente_esquerda"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_carreira_40"), SubResource("Atlas_carreira_41"), SubResource("Atlas_carreira_42"), SubResource("Atlas_carreira_43"), SubResource("Atlas_carreira_44"), SubResource("Atlas_carreira_45"), SubResource("Atlas_carreira_46"), SubResource("Atlas_carreira_47")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="Animation" id="Animation_atack_carreira_esquerda"]
+resource_name = "atack_carreira_esquerda"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_carreira_48"), SubResource("Atlas_carreira_49"), SubResource("Atlas_carreira_50"), SubResource("Atlas_carreira_51"), SubResource("Atlas_carreira_52"), SubResource("Atlas_carreira_53"), SubResource("Atlas_carreira_54"), SubResource("Atlas_carreira_55")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="Animation" id="Animation_atack_carreira_costa_esquerda"]
+resource_name = "atack_carreira_costa_esquerda"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Atlas_carreira_56"), SubResource("Atlas_carreira_57"), SubResource("Atlas_carreira_58"), SubResource("Atlas_carreira_59"), SubResource("Atlas_carreira_60"), SubResource("Atlas_carreira_61"), SubResource("Atlas_carreira_62"), SubResource("Atlas_carreira_63")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nv64x"]
+_data = {
+&"atack_carreira_costa": SubResource("Animation_atack_carreira_costa"),
+&"atack_carreira_costa_direita": SubResource("Animation_atack_carreira_costa_direita"),
+&"atack_carreira_direita": SubResource("Animation_atack_carreira_direita"),
+&"atack_carreira_frente_direita": SubResource("Animation_atack_carreira_frente_direita"),
+&"atack_carreira": SubResource("Animation_atack_carreira"),
+&"atack_carreira_frente_esquerda": SubResource("Animation_atack_carreira_frente_esquerda"),
+&"atack_carreira_esquerda": SubResource("Animation_atack_carreira_esquerda"),
+&"atack_carreira_costa_esquerda": SubResource("Animation_atack_carreira_costa_esquerda"),
+&"RESET": SubResource("Animation_v60e1"),
+&"andando": SubResource("Animation_er6yu"),
+&"andando_costa": SubResource("Animation_axlw1"),
+&"andando_costa_direita": SubResource("Animation_costa_direita"),
+&"andando_costa_esquerda": SubResource("Animation_costa_esquerda"),
+&"andando_direita": SubResource("Animation_direita"),
+&"andando_esquerda": SubResource("Animation_esquerda"),
+&"andando_frente_direita": SubResource("Animation_frente_direita"),
+&"andando_frente_esquerda": SubResource("Animation_frente_esquerda"),
+&"parado": SubResource("Animation_parado"),
+&"parado_costa": SubResource("Animation_parado_costa"),
+&"parado_costa_direita": SubResource("Animation_parado_costa_direita"),
+&"parado_costa_esquerda": SubResource("Animation_parado_costa_esquerda"),
+&"parado_direita": SubResource("Animation_parado_direita"),
+&"parado_esquerda": SubResource("Animation_parado_esquerda"),
+&"parado_frente_direita": SubResource("Animation_parado_frente_direita"),
+&"parado_frente_esquerda": SubResource("Animation_parado_frente_esquerda")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1551729345]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1501859951]
+motion_mode = 1
+script = ExtResource("2_javali")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=150869432]
+shape = SubResource("CapsuleShape2D_yeiif")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=478292546]
+texture_filter = 1
+scale = Vector2(0.55, 0.55)
+texture = SubResource("Atlas_parado_32")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/Sprite2D" unique_id=1675167700]
+libraries/ = SubResource("AnimationLibrary_nv64x")
+autoplay = &"parado"

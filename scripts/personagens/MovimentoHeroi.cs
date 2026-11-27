@@ -21,6 +21,8 @@ public partial class MovimentoHeroi : CharacterBody2D
 	private Label _textoVida;
 	private float _tempoDeLentidao;
 	private float _fatorDeLentidao = 1f;
+	private Vector2 _velocidadeEmpurrao;
+	private float _tempoEmpurrao;
 
 	public override void _Ready()
 	{
@@ -62,10 +64,33 @@ public partial class MovimentoHeroi : CharacterBody2D
 		return true;
 	}
 
+	public bool ReceberInvestida(int dano, Vector2 direcao, float distancia = 56f)
+	{
+		bool fatal = Vida <= Mathf.Max(1, dano - Defesa);
+		if (!ReceberGolpe(dano))
+			return false;
+		// A derrota pode transportar o herói: não empurra o personagem renascido.
+		if (fatal)
+			return true;
+
+		Vector2 sentido = direcao.IsZeroApprox() ? Vector2.Down : direcao.Normalized();
+		_tempoEmpurrao = 0.2f;
+		_velocidadeEmpurrao = sentido * Mathf.Max(0, distancia) / _tempoEmpurrao;
+		var efeito = GD.Load<PackedScene>("res://scenes/efeitos/ImpactoCarreiraJavali.tscn")
+			.Instantiate<AnimatedSprite2D>();
+		AddChild(efeito);
+		int setor = Mathf.PosMod(Mathf.RoundToInt(sentido.Angle() / (Mathf.Pi / 4f)), 8);
+		int linha = (setor + 2) % 8;
+		efeito.AnimationFinished += efeito.QueueFree;
+		efeito.Play($"impacto_{linha}");
+		return true;
+	}
+
 	public void RenascerNoInicio()
 	{
 		AtualizarVida(VidaMaxima);
 		_tempoDeLentidao = 0f;
+		_tempoEmpurrao = 0f;
 		Velocity = Vector2.Zero;
 		GlobalPosition = _pontoInicial;
 		GetViewport().GetCamera2D()?.ResetSmoothing();
@@ -73,6 +98,7 @@ public partial class MovimentoHeroi : CharacterBody2D
 
 	public void PosicionarNaChegada(Vector2 posicao)
 	{
+		_tempoEmpurrao = 0f;
 		_pontoInicial = posicao;
 		GlobalPosition = posicao;
 		Velocity = Vector2.Zero;
@@ -108,7 +134,20 @@ public partial class MovimentoHeroi : CharacterBody2D
 		_tempoDeLentidao = Mathf.Max(0f, _tempoDeLentidao - (float)delta);
 		if (Vida <= 0 || EmDialogo || EmInventario || Coletando)
 		{
+			_tempoEmpurrao = 0f;
 			Velocity = Vector2.Zero;
+			return;
+		}
+
+		if (_tempoEmpurrao > 0)
+		{
+			float passo = Mathf.Min((float)delta, _tempoEmpurrao);
+			_tempoEmpurrao = Mathf.Max(0, _tempoEmpurrao - passo);
+			Velocity = _velocidadeEmpurrao;
+			if (MoveAndCollide(Velocity * passo) is not null)
+				_tempoEmpurrao = 0;
+			if (_tempoEmpurrao <= 0)
+				Velocity = Vector2.Zero;
 			return;
 		}
 
